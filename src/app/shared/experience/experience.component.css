@@ -1,0 +1,51 @@
+.experience-container {
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.green-h2 {
+  color: green;
+}
+
+.experience-line {
+  display: flex;
+  border-bottom: dashed 2px green;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  flex-direction: column;
+}
+
+.experience-line-header {
+  flex-direction: row;
+  display: flex;
+}
+
+.experience-line-header-company {
+  display: flex;
+  min-width: 200px;
+  font-weight: bold;
+}
+
+.experience-line-header-position {
+  display: flex;
+  font-weight: bold;
+}
+
+.experience-line-info {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.experience-line-indo-period {
+  display: flex;
+  min-width: 200px;
+}
+
+.experience-line-info-text {
+  display: flex;
+}
+
+ul {
+  list-style-type: none;
+}

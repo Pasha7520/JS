@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  background: white;
+}
+
+.main-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+}
+
+.right-side {
+  margin-left: 250px;
+  font-size: 15px;
+  vertical-align: top;
+  max-width: 900px;
+  padding: 40px;
+}

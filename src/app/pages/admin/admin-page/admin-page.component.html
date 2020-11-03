@@ -1,0 +1,148 @@
+<div class="login-page">
+  <div class="form">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <h2 class="green-h2">About Me</h2>
+      <input type="text" placeholder="...about me" name="about" formControlName="aboutMe"/>
+      <span *ngIf="aboutMe.errors?.required && (aboutMe.dirty || aboutMe.touched)">* enter</span>
+      <span *ngIf="aboutMe.errors?.pattern && (aboutMe.dirty || aboutMe.touched)">* incorrect</span>
+
+      <h2 class="green-h2">Educations</h2>
+      <div class="education-container">
+        <div class="education" formArrayName="educations" *ngFor="let education of educations.controls; let i=index">
+          <div [formGroupName]="i">
+            <button type="button" (click)="removeEducation(i)">Remove education</button>
+            <div class="time">
+              <input type="text" formControlName="time" placeholder="time" name="time">
+              <span
+                *ngIf="getEducationsFormGroup(i).controls['time'].touched
+                && getEducationsFormGroup(i).controls['time'].invalid">* year invalid</span>
+
+            </div>
+            <div class="education-details">
+              <input type="text" formControlName="title" placeholder="title" name="title">
+              <span
+                *ngIf="getEducationsFormGroup(i).controls['title'].touched && getEducationsFormGroup(i).controls['title'].hasError('required')">* enter</span>
+              <input type="text" formControlName="details" placeholder="details" name="details">
+              <span
+                *ngIf="getEducationsFormGroup(i).controls['details'].touched && getEducationsFormGroup(i).controls['details'].hasError('required')">* enter</span>
+            </div>
+          </div>
+        </div>
+        <button type="button" (click)="addEducation()">Add education</button>
+      </div>
+
+      <h2 class="green-h2">Experience</h2>
+      <div class="experience-container">
+        <div class="experience-line" formArrayName="experiences"
+             *ngFor="let experience of experiences.controls; let i=index">
+          <div [formGroupName]="i">
+            <button type="button" (click)="removeExperience(i)">Remove experience</button>
+            <div class="experience-line-header-company">
+              <input type="text" formControlName="company" placeholder="company" name="company">
+              <span
+                *ngIf="getExperiencesFormGroup(i).controls['company'].touched && getExperiencesFormGroup(i).controls['company'].hasError('required')">* enter</span>
+            </div>
+            <div class="experience-line-header-position">
+              <input type="text" formControlName="position" placeholder="position" name="position">
+              <span
+                *ngIf="getExperiencesFormGroup(i).controls['position'].touched && getExperiencesFormGroup(i).controls['position'].hasError('required')">* enter</span>
+            </div>
+
+            <div class="experience-line-indo-period">
+              <input type="text" formControlName="period" placeholder="period" name="period">
+              <span
+                *ngIf="getExperiencesFormGroup(i).controls['period'].touched && getExperiencesFormGroup(i).controls['period'].hasError('required')">* enter</span>
+            </div>
+            <div class="experience-line-info-text">
+              <input type="text" formControlName="text" placeholder="text" name="text">
+              <span
+                *ngIf="getExperiencesFormGroup(i).controls['text'].touched && getExperiencesFormGroup(i).controls['text'].hasError('required')">* enter</span>
+            </div>
+          </div>
+        </div>
+        <button type="button" (click)="addExperience()">Add experience</button>
+      </div>
+
+      <h2 class="green-h2">Skills</h2>
+      <div class="skills-container">
+        <div formArrayName="skills" *ngFor="let skill of skills.controls; let i=index">
+          <div [formGroupName]="i">
+            <button type="button" (click)="removeSkill(i)">Remove skill</button>
+            <div class="skills-lines skills-line-font">
+              <div class="skills-line skill-1">
+                <input type="text" formControlName="skill" placeholder="skill" name="skill">
+                <span
+                  *ngIf="getSkillsFormGroup(i).controls['skill'].touched && getSkillsFormGroup(i).controls['skill'].hasError('required')">* enter</span>
+              </div>
+            </div>
+            <div class="skills-measure skills-measure-font">
+              <div class="skills-measure-beginner">
+                <select formControlName="level" name="level">
+                  <option value="Beginner">Beginner</option>
+                  <option value="Proficient">Proficient</option>
+                  <option value="Expert">Expert</option>
+                  <option value="Master">Master</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button type="button" (click)="addSkill()">Add skill</button>
+      </div>
+
+      <h2 class="green-h2">Contacts</h2>
+      <div class="contacts-container">
+        <div formArrayName="contacts" *ngFor="let contact of contacts.controls; let i=index">
+          <div [formGroupName]="i">
+            <button type="button" (click)="removeContact(i)">Remove contact</button>
+            <div class="contacts-line">
+              <input type="text" formControlName="iconName" placeholder="icon name" name="iconName">
+              <span
+                *ngIf="getContactsFormGroup(i).controls['iconName'].touched && getContactsFormGroup(i).controls['iconName'].hasError('required')">* enter</span>
+            </div>
+            <div class="contacts-line-text">
+              <input type="text" formControlName="title" placeholder="title" name="title">
+              <input type="text" formControlName="value" placeholder="value" name="value">
+              <span
+                *ngIf="getContactsFormGroup(i).controls['value'].touched && getContactsFormGroup(i).controls['value'].hasError('required')">* enter</span>
+              <input type="text" formControlName="link" placeholder="link" name="link">
+              <span
+                *ngIf="getContactsFormGroup(i).controls['link'].touched && getContactsFormGroup(i).controls['link'].hasError('required')">* enter</span>
+            </div>
+          </div>
+        </div>
+        <button type="button" (click)="addContact()">Add contact</button>
+      </div>
+
+      <h2 class="green-h2">Feedbacks</h2>
+      <div class="feedbacks-container">
+        <div formArrayName="feedbacks" *ngFor="let feedback of feedbacks.controls; let i=index">
+          <div [formGroupName]="i">
+            <button type="button" (click)="removeFeedback(i)">Remove feedback</button>
+            <div class="feedbacks-line">
+              <input type="text" formControlName="fullName" placeholder="Full Name" name="fullName">
+              <span
+                *ngIf="getFeedbacksFormGroup(i).controls['fullName'].touched && getFeedbacksFormGroup(i).controls['fullName'].hasError('required')">* enter</span>
+
+              <input type="text" formControlName="role" placeholder="Role" name="role">
+              <span
+                *ngIf="getFeedbacksFormGroup(i).controls['role'].touched && getFeedbacksFormGroup(i).controls['role'].hasError('required')">* enter</span>
+
+              <input type="text" formControlName="link" placeholder="link" name="link">
+
+              <input type="text" formControlName="text" placeholder="text" name="text">
+              <span
+                *ngIf="getFeedbacksFormGroup(i).controls['text'].touched && getFeedbacksFormGroup(i).controls['text'].hasError('required')">* enter</span>
+            </div>
+          </div>
+        </div>
+        <button type="button" (click)="addFeedback()">Add feedback</button>
+      </div>
+
+
+      <button type="submit">Save</button>
+      <button type="reset">Reset</button>
+      <a href="/home" class="side-nav-link">Home</a>
+    </form>
+  </div>
+</div>

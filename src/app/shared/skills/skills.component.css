@@ -1,0 +1,76 @@
+.skills-container {
+  display: flex;
+  max-width: 700px;
+  height: 10vh;
+  flex-direction: column;
+}
+
+.green-h2 {
+  color: green;
+  font-size: 2em;
+  margin-bottom: 30px;
+}
+
+.skills-line-font {
+  font-size: 1em;
+  color: white;
+}
+
+.skills-measure-font {
+  font-size: 0.7em;
+}
+
+.skills-lines {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.skills-line {
+  display: flex;
+  height: 20px;
+  margin: 5px 5px 5px 10px;
+  padding-left: 5px;
+  background-color: green;
+}
+
+.skill-1 {
+  width: 95%;
+}
+
+.skill-2 {
+  width: 70%;
+}
+
+.skill-3 {
+  width: 40%;
+}
+
+.skill-4 {
+  width: 25%;
+}
+
+.skills-measure {
+  display: flex;
+  margin-top: 10px;
+  border-top: dashed 1px gray;
+}
+
+.skills-measure-beginner {
+  width: 25%;
+}
+
+.skills-measure-proficient {
+  width: 50%;
+}
+
+.skills-measure-expert {
+  width: 25%;
+}
+
+.skills-measure-master {
+  width: 25%;
+  display: flex;
+  justify-content: flex-end;
+}

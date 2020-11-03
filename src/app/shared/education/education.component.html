@@ -1,0 +1,19 @@
+<div id="{{educationId}}">
+  <h2 class="green-h2">{{educationHeader}}</h2>
+  <div class="education-container">
+    <div class="vertical-line">|</div>
+    <div class="education">
+      <ul>
+        <li *ngFor="let education of educations">
+          <div class="time">
+            <span>{{education.time}}</span>
+          </div>
+          <div class="education-details">
+            <h4>{{education.title}}</h4>
+            <p>{{education.details}}</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+.contacts-container {
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.green-h2 {
+  color: green;
+  font-size: 1.5em;
+  padding-bottom: 30px;
+}
+
+.contacts-line-font {
+  font-size: 0.8em;
+}
+
+.contacts-line {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  padding-left: 20px;
+}
+
+.contacts-icon {
+  display: flex;
+  flex-direction: row;
+  width: 60px;
+  height: auto;
+  color: green;
+}
+
+.contacts-line-header {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+}
+
+.contacts-line-text {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+}
+
+ul {
+  list-style-type: none;
+}

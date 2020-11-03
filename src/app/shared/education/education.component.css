@@ -1,0 +1,51 @@
+.green-h2 {
+  color: green;
+}
+
+.education-container {
+  position: relative;
+  max-height: 100%;
+  overflow: auto;
+  height: 500px;
+  border-radius: 10px;
+}
+
+.education {
+  width: 100%;
+  position: relative;
+}
+
+.vertical-line {
+  width: 5px;
+  background-color: green;
+  position: absolute;
+  top: 10px;
+  bottom: 0;
+  left: 40px;
+  height: 90vh;
+}
+
+.time {
+  position: absolute;
+  display: inline-block;
+  padding: 5px;
+  z-index: 2;
+  width: 40px;
+  height: 30px;
+  color: green;
+  margin-left: 15px;
+  background-color: white;
+  vertical-align: center;
+}
+
+.education-details {
+  padding: 10px;
+  display: inline-block;
+  background-color: silver;
+  border-radius: 20px;
+  margin: 0 20px 40px 100px;
+}
+
+ul {
+  list-style-type: none;
+}

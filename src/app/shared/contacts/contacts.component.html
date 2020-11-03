@@ -1,0 +1,22 @@
+<div id="{{contactsId}}" class="contacts-container">
+  <div class="green-h2">
+    <span>{{contactsHeader}}</span>
+  </div>
+  <ul>
+    <li *ngFor="let contact of contacts">
+      <div class="contacts-line">
+        <div class="contacts-icon">
+          <img src="{{contact.imgSrc}}" alt="skype">
+        </div>
+        <div class="contacts-line-text">
+          <div class="contacts-line-header contacts-line-font">
+            <span>{{contact.header}}</span>
+          </div>
+          <div class="contacts-line-text2 contacts-line-font">
+            <span>{{contact.text}}</span>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

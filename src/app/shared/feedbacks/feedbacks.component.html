@@ -1,0 +1,22 @@
+<div id="{{feedbacksId}}" class="feedbacks-container">
+  <div class="green-h2">
+    <span>{{feedbacksHeader}}</span>
+  </div>
+  <ul>
+    <li *ngFor="let feedback of feedbacks">
+      <div class="feedbacks-line">
+        <div class="feedbacks-line-text feedbacks-line-font">
+          <p>{{feedback.text}}</p>
+        </div>
+        <div class="feedbacks-line-author">
+          <img class="feedbacks-line-author-profile" src="{{feedback.imgSrc}}" alt="author">
+          <div class="feedbacks-line-author feedbacks-line-font">
+                    <span>{{feedback.author}}
+                      <a href="{{feedback.link}}">{{feedback.linkText}}</a>
+                    </span>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

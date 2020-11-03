@@ -1,0 +1,44 @@
+.left-side-menu {
+  position: fixed;
+  background-color: black;
+  color: white;
+  width: 250px;
+  height: 100vh;
+}
+.left-side-menu ul {
+  list-style-type: none;
+  padding: 0;
+  width: 250px;
+}
+
+.left-side-menu ul li {
+  border-top: dashed 1px gray;
+  border-bottom: dashed 1px gray;
+  width: 250px;
+  display: block;
+}
+
+.left-side-menu ul li a {
+  font-size: 20px;
+  text-decoration: none;
+  color: gray;
+}
+
+.left-side-menu .back-to-start {
+  font-size: 20px;
+  position: fixed;
+  left: 40px;
+  bottom: 30px;
+}
+
+.back-to-start a {
+  color: white;
+  text-decoration: none;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  padding: 10px 10px 0 10px;
+  vertical-align: center;
+}

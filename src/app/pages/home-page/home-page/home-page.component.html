@@ -1,0 +1,15 @@
+<div class="main-container">
+  <app-side-nav [name]="name" [profilePhotoSrc]="profilePhotoSrc"></app-side-nav>
+  <div class="right-side">
+    <app-text-block [aboutMeId]="aboutMeId" [aboutMeText]="aboutMeText"
+                    [aboutMeHeader]="aboutMeHeader"></app-text-block>
+    <app-education [educationId]="educationId" [educationHeader]="educationHeader"
+                   [educations]="educations"></app-education>
+    <app-experience [experienceHeader]="experienceHeader" [experienceId]="experienceId"
+                    [experiences]="experiences"></app-experience>
+    <app-contacts [contactsHeader]="contactsHeader" [contactsId]="contactsId" [contacts]="contacts"></app-contacts>
+    <app-feedbacks [feedbacksHeader]="feedbacksHeader" [feedbacksId]="feedbacksId"
+                   [feedbacks]="feedbacks"></app-feedbacks>
+    <app-skills [skillsId]="skillsId"></app-skills>
+  </div>
+</div>

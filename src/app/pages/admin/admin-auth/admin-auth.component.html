@@ -1,0 +1,20 @@
+<div class="login-page">
+  <div class="form">
+    <form #f="ngForm" class="login-form" (ngSubmit)="onFormSubmit(f)">
+      <p [class.has-error]="userName.invalid && (userName.dirty || userName.touched)">
+        <input type="text" placeholder="username" name="name" #userName="ngModel" [(ngModel)]="user.name" required
+               pattern="[a-zA-Z]*"
+               [ngClass]="{'invalid' : userName.errors?.pattern && (userName.dirty || userName.touched)}"/>
+        <span *ngIf="userName.errors?.required && (userName.dirty || userName.touched)">* enter</span>
+        <span *ngIf="userName.errors?.pattern && (userName.dirty || userName.touched)">* incorrect</span>
+
+        <input type="password" placeholder="password" name="password" #password="ngModel" [(ngModel)]="user.password"
+               required minlength="6"
+               [ngClass]="{'invalid' : password.errors?.minlength && (userName.dirty || userName.touched)}"/>
+        <span *ngIf="password.errors?.required && (userName.dirty || userName.touched)">* enter</span>
+        <span *ngIf="password.errors?.minlength && (userName.dirty || userName.touched)">* incorrect</span>
+
+        <button type="submit" [disabled]="f.invalid">login</button>
+    </form>
+  </div>
+</div>
